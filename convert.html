@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table with Submit Button</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+        }
+    </style>
+    <script src="table2excel.js"></script>
+</head>
+<body>
+
+    <!-- youtube video link: https://youtu.be/vWbMRlUvre8?si=dreRo3zO4O3nGODR -->
+
+    <h2>Dynamic Table with Submit Button</h2>
+
+    <table id="example-table">
+        <thead>
+            <tr>
+                <th>Row Label</th>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+                <th>Column 5</th>
+                <th>Column 6</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows -->
+            <tr>
+                <td>Row 1</td>
+                <td><input type="text" name="row1col1"></td>
+                <td><input type="text" name="row1col2"></td>
+                <td><input type="text" name="row1col3"></td>
+                <td><input type="text" name="row1col4"></td>
+                <td><input type="text" name="row1col5"></td>
+                <td><input type="text" name="row1col6"></td>
+            </tr>
+            <tr>
+                <td>Row 2</td>
+                <td><input type="text" name="row2col1"></td>
+                <td><input type="text" name="row2col2"></td>
+                <td><input type="text" name="row2col3"></td>
+                <td><input type="text" name="row2col4"></td>
+                <td><input type="text" name="row2col5"></td>
+                <td><input type="text" name="row2col6"></td>
+            </tr>
+            <tr>
+                <td>Row 3</td>
+                <td><input type="text" name="row3col1"></td>
+                <td><input type="text" name="row3col2"></td>
+                <td><input type="text" name="row3col3"></td>
+                <td><input type="text" name="row3col4"></td>
+                <td><input type="text" name="row3col5"></td>
+                <td><input type="text" name="row3col6"></td>
+            </tr>
+            <tr>
+                <td>Row 4</td>
+                <td><input type="text" name="row4col1"></td>
+                <td><input type="text" name="row4col2"></td>
+                <td><input type="text" name="row4col3"></td>
+                <td><input type="text" name="row4col4"></td>
+                <td><input type="text" name="row4col5"></td>
+                <td><input type="text" name="row4col6"></td>
+            </tr>
+            <tr>
+                <td>Row 5</td>
+                <td><input type="text" name="row5col1"></td>
+                <td><input type="text" name="row5col2"></td>
+                <td><input type="text" name="row5col3"></td>
+                <td><input type="text" name="row5col4"></td>
+                <td><input type="text" name="row5col5"></td>
+                <td><input type="text" name="row5col6"></td>
+            </tr>
+            <tr>
+                <td>Row 6</td>
+                <td><input type="text" name="row6col1"></td>
+                <td><input type="text" name="row6col2"></td>
+                <td><input type="text" name="row6col3"></td>
+                <td><input type="text" name="row6col4"></td>
+                <td><input type="text" name="row6col5"></td>
+                <td><input type="text" name="row6col6"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button id="downloadexcel">Export to Excel</button>
+    <script>
+        document.getElementById('downloadexcel').addEventListener('click',function(){
+        var table2excel = new Table2Excel();
+        table2excel.export(document.querySelectorAll("#example-table"));
+        })
+    </script>
+
+</body>
+</html>
